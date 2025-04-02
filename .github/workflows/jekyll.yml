@@ -50,13 +50,21 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Build Assets
-        run: npm i && npm run build
+      - name: Build jekyll Assets
+        run: cd my-jekyll-project && npm i && npm run build
 
-      - name: Build site
-        run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
+      - name: Build jekyll site
+        run: npm run build:jekyll
         env:
           JEKYLL_ENV: "production"
+
+      - name: Build docusaurus site
+        run: npm run build:docs
+        env:
+          JEKYLL_ENV: "production"
+
+      - name: echo test
+        run: ls "_site${{ steps.pages.outputs.base_path }}"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
