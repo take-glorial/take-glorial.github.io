@@ -50,15 +50,18 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Build jekyll Assets
-        run: cd my-jekyll-project && npm i && npm run build
+      - name: Instsall Node
+        run: npm i
 
-      - name: Build jekyll site
+      - name: Build jekyll Assets
+        run: cd my-jekyll-project && npm run build
+
+      - name: Build jekyll Site
         run: cd my-jekyll-project && bundle exec jekyll b -d "../_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
 
-      - name: Build docusaurus site
+      - name: Build Docusaurus Site
         run: npm run build:docs
         env:
           JEKYLL_ENV: "production"
