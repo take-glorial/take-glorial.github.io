@@ -54,7 +54,7 @@ jobs:
         run: cd my-jekyll-project && npm i && npm run build
 
       - name: Build jekyll site
-        run: npm run build:jekyll
+        run: bundle exec jekyll b -d "../_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
 
