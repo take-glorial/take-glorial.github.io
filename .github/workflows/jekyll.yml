@@ -44,6 +44,7 @@ jobs:
         with:
           ruby-version: 3.3
           bundler-cache: true
+          working-directory: my-jekyll-project
 
       - name: Setup Node
         uses: actions/setup-node@v4
