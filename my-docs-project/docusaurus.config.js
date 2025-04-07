@@ -6,6 +6,8 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
+const isProd = process.env.DOCU_ENV === 'production';
+
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
@@ -18,7 +20,7 @@ const config = {
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: isProd ? '/docs/' : '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

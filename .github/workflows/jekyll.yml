@@ -68,7 +68,7 @@ jobs:
       - name: Build Docusaurus Site
         run: npm run build:docs
         env:
-          JEKYLL_ENV: "production"
+          DOCU_ENV: "production"
 
       - name: Combine outputs
         run: |
