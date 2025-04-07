@@ -55,10 +55,7 @@ jobs:
         run: npm i
 
       - name: Build jekyll Assets
-        run: cd my-jekyll-project && npm run build
-
-      - name: echo jekyll asset ls
-        run: cd my-jekyll-project && ls -al -R assets
+        run: cd my-jekyll-project && npm i && npm run build
 
       - name: Build jekyll Site
         run: cd my-jekyll-project && bundle exec jekyll b -d "../_site${{ steps.pages.outputs.base_path }}"
@@ -74,9 +71,6 @@ jobs:
         run: |
           mkdir -p "_site${{ steps.pages.outputs.base_path }}/document"
           cp -r my-docs-project/build/* "_site${{ steps.pages.outputs.base_path }}/document/"
-
-      - name: echo test
-        run: ls -al -R "_site${{ steps.pages.outputs.base_path }}"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
