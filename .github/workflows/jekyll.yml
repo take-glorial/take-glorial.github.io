@@ -58,7 +58,7 @@ jobs:
         run: cd my-jekyll-project && npm i && npm run build
 
       - name: Build jekyll Site
-        run: cd my-jekyll-project && bundle exec jekyll b -d
+        run: cd my-jekyll-project && bundle exec jekyll b
         env:
           JEKYLL_ENV: "production"
 
