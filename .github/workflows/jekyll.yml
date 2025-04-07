@@ -71,7 +71,7 @@ jobs:
           JEKYLL_ENV: "production"
 
       - name: echo test
-        run: ls "_site${{ steps.pages.outputs.base_path }}"
+        run: ls -al -R "_site${{ steps.pages.outputs.base_path }}"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
