@@ -72,8 +72,8 @@ jobs:
 
       - name: Combine outputs
         run: |
-          mkdir -p "_site${{ steps.pages.outputs.base_path }}/docs"
-          cp -r my-docs-project/build/* "_site${{ steps.pages.outputs.base_path }}/docs/"
+          mkdir -p "_site${{ steps.pages.outputs.base_path }}/document"
+          cp -r my-docs-project/build/* "_site${{ steps.pages.outputs.base_path }}/document/"
 
       - name: echo test
         run: ls -al -R "_site${{ steps.pages.outputs.base_path }}"
