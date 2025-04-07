@@ -70,6 +70,11 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      - name: Combine outputs
+        run: |
+          mkdir -p "_site${{ steps.pages.outputs.base_path }}/docs"
+          cp -r my-docs-project/build/* "_site${{ steps.pages.outputs.base_path }}/docs/"
+
       - name: echo test
         run: ls -al -R "_site${{ steps.pages.outputs.base_path }}"
 
