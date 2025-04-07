@@ -58,7 +58,7 @@ jobs:
         run: cd my-jekyll-project && npm run build
 
       - name: echo jekyll asset ls
-        run: cd my-jekyll-project && ls -al
+        run: cd my-jekyll-project && ls -al -R assets
 
       - name: Build jekyll Site
         run: cd my-jekyll-project && bundle exec jekyll b -d "../_site${{ steps.pages.outputs.base_path }}"
