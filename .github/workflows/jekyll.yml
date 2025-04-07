@@ -58,7 +58,7 @@ jobs:
         run: cd my-jekyll-project && npm i && npm run build
 
       - name: Build jekyll Site
-        run: cd my-jekyll-project && bundle exec jekyll b -d "../_site${{ steps.pages.outputs.base_path }}"
+        run: cd my-jekyll-project && bundle exec jekyll b -d
         env:
           JEKYLL_ENV: "production"
 
@@ -70,6 +70,7 @@ jobs:
       - name: Combine outputs
         run: |
           mkdir -p "_site${{ steps.pages.outputs.base_path }}/document"
+          cp -r my-jekyll-project/_site/* "_site${{ steps.pages.outputs.base_path }}/"
           cp -r my-docs-project/build/* "_site${{ steps.pages.outputs.base_path }}/document/"
 
       - name: Upload site artifact
