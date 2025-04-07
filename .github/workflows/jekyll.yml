@@ -55,7 +55,7 @@ jobs:
         run: npm i
 
       - name: Build jekyll Assets
-        run: cd my-jekyll-project && npm i && npm run build
+        run: cd my-jekyll-project && npm run build
 
       - name: Build jekyll Site
         run: cd my-jekyll-project && bundle exec jekyll b

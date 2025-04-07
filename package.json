@@ -23,7 +23,7 @@
     "start:jekyll": "cd my-jekyll-project && bundle exec jekyll serve",
     "start:docs": "cd my-docs-project && npm start",
     "start": "concurrently \"npm run start:jekyll\" \"npm run start:docs\"",
-    "build:jekyll": "cd my-jekyll-project && bundle exec jekyll b -d ../site",
+    "build:jekyll": "cd my-jekyll-project && bundle exec jekyll b",
     "build:docs": "cd my-docs-project && npm run build"
   },
   "devDependencies": {
